@@ -159,9 +159,9 @@ class WireLink_OT(bpy.types.Operator):
                     spline = sp.data.splines[0]
                     bp = spline.bezier_points
                     if i == 0:
-                        bp[-1].select_control_point = True
-                    else:
                         bp[0].select_control_point = True
+                    else:
+                        bp[-1].select_control_point = True
                         
                     bpy.ops.object.hook_add_selob(use_bone=False)
                     bpy.ops.curve.select_all(action = 'DESELECT')
